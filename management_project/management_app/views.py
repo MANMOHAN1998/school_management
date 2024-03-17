@@ -58,7 +58,7 @@ def register_student(request):
     return render(request, 'registration.html', {'class': student_class})
 
 
-@api_view(['POST','GET'])
+@api_view(['POST'])
 def student_login(request):
     form = LoginForm(request.data)
     if form.is_valid():
