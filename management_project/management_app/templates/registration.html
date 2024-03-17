@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+</head>
+<body>
+    <h2>Student Registration Form</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="fname">Phone</label><br>
+        <input type="number" id="phone" name="phone" required><br>
+        <label for="lname">password</label><br>
+        <input type="text" id="lname" name="password" required><br><br>
+
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+
+        <label for="fname">email</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="lname">Date Of Birth</label><br>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <label for="fname">Profile Image</label><br>
+        <input type="file" id="pimage" name="pimage"><br>
+        <br>
+        <label for="cars">Select Your Class</label>
+        <select name="class" id="class" required>
+            {% for item in class %}
+            <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
